@@ -1,9 +1,16 @@
-import React, { Component } from "react";
-import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Platform
+} from 'react-native';
+import { connect } from 'react-redux';
 
-import Icon from "react-native-vector-icons/Ionicons";
-import { deletePlace } from "../../store/actions";
+import Icon from 'react-native-vector-icons/Ionicons';
+import { deletePlace } from '../../store/actions';
 
 class PlaceDetail extends Component {
   placeDeletedHandler = () => {
@@ -26,7 +33,7 @@ class PlaceDetail extends Component {
             <View style={styles.deleteButton}>
               <Icon
                 size={30}
-                name="ios-trash"
+                name={Platform.OS === 'android' ? 'md-trash' : 'ios-trash'}
                 color="red"
                 onPress={this.placeDeletedHandler}
               />
@@ -43,16 +50,16 @@ const styles = StyleSheet.create({
     margin: 22
   },
   placeImage: {
-    width: "100%",
+    width: '100%',
     height: 200
   },
   placeName: {
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
     fontSize: 28
   },
   deleteButton: {
-    alignItems: "center"
+    alignItems: 'center'
   }
 });
 

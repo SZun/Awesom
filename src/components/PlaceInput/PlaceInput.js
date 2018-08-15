@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DefaultInput from '../UI/DefaultInput/DefaultInput';
 
 const PlaceInput = props => (
@@ -8,4 +8,5 @@ const PlaceInput = props => (
     onChangeText={props.onChangeText}
   />
 );
+
 export default PlaceInput;
