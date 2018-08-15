@@ -1,5 +1,12 @@
-import React, { Component } from "react";
-import { Text, View, Dimensions, StyleSheet } from "react-native";
+import React, { Component } from 'react';
+import {
+  Text,
+  View,
+  Dimensions,
+  StyleSheet,
+  TouchableOpacity
+} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export class SideDrawer extends Component {
   render() {
@@ -7,10 +14,20 @@ export class SideDrawer extends Component {
       <View
         style={[
           styles.contianer,
-          { width: Dimensions.get("window").width * 0.8 }
+          { width: Dimensions.get('window').width * 0.8 }
         ]}
       >
-        <Text>SideDrawer</Text>
+        <TouchableOpacity>
+          <View style={styles.drawerItem}>
+            <Icon
+              style={styles.drawerItemIcon}
+              name="ios-log-out"
+              size={30}
+              color="#aaa"
+            />
+            <Text>Sign Out</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -18,9 +35,18 @@ export class SideDrawer extends Component {
 
 const styles = StyleSheet.create({
   contianer: {
-    paddingTop: 22,
-    backgroundColor: "white",
+    paddingTop: 50,
+    backgroundColor: 'white',
     flex: 1
+  },
+  drawerItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: '#eee'
+  },
+  drawerItemIcon: {
+    marginRight: 10
   }
 });
 
