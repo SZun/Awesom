@@ -42,7 +42,6 @@ class SharePlace extends Component {
 
   placeAddedHandler = () => {
     if (this.state.placeName.trim() !== '') {
-      console.log(this.state.placeName);
       this.props.onAddPlace(this.state.placeName);
     }
   };
