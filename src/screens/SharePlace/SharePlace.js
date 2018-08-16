@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import { addPlace } from '../../store/actions';
+import { addPlace } from '../../store/actions/index';
 import PlaceInput from '../../components/PlaceInput/PlaceInput';
 import MainText from '../../components/UI/MainText/MainText';
 import HeadingText from '../../components/UI/HeadingText/HeadingText';
